@@ -6,19 +6,15 @@ export class Home extends React.Component {
     constructor(props) {
         super();
         this.state = {
-            km: props.km,
-            fuel: props.fuel,
-            price: props.price
-        };
+        km: props.km,
+        fuel: props.fuel,
+        price: props.price
+     };
        
     }
 
-    onCalculate() {
-        alert("toimii");
-    }
-
-    onChangeLink() {
-        this.props.changeLink(this.state.homeLink);
+    onCalculate(props) {
+        console.log(props.km);
     }
     
     onHandleChange(event) {
@@ -29,20 +25,16 @@ export class Home extends React.Component {
 
     render() {       
         return (
-            <div>
-                <p>Laske kuinka paljon rahaa menee bensaan</p>
+            <div>               
                 <hr/>
-                <p>Ajetut kilometrit:</p>
-                <input type="number"/>
-                <p>Auton kulutus:</p>
-                <input type="number"/>
-                <p>Bensan litrahinta:</p>
-                <input type="number"/>
+                <input ref={this.km} type="number" placeholder="Ajetut kilometrit"/>
+                <input ref="fuel" type="number" placeholder="Auton kulutus"/>
+                <input ref="price" type="number" placeholder="Polttoaineen litrahinta"/>
                 <hr/>  
-                <button onClick={this.onCalculate} className="btn btn-primary">Laske bensakustannukset</button>
+                <button onClick={this.onCalculate} className="btn btn-warning btn-lg">Laske kustannukset</button>
                 <div></div>
                     <p>Tulos</p>
-                </div>         
+            </div>         
         );
     }
 }

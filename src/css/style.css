@@ -2,3 +2,13 @@ body {
     background-image: url("../img/road.png");
     background-size: cover;
 }
+
+input {
+    margin: 10px;   
+}
+
+#navText {
+    color: #E4DCC8;
+}
+
+
