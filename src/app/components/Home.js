@@ -29,6 +29,7 @@ export class Home extends React.Component {
         km.value = "";
         fuel.value = "";
         price.value = "";
+        howMuch.innerHTML = "";
     }
 
     render() {       
