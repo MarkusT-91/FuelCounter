@@ -9,8 +9,8 @@ input {
     color: #0C0B0B; 
 }
 
-#total-container {
-    height: 20px;
+#result {
+    width: 250px;
 }
 
 ::-webkit-input-placeholder {

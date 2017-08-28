@@ -7,22 +7,18 @@ export class Home extends React.Component {
         var km = parseFloat(document.getElementById("km"));
         var fuel = parseFloat(document.getElementById("fuel"));
         var price = parseFloat(document.getElementById("price"));
-        var howMuch = document.getElementById("howMuch");
+        var result = document.getElementById("result");
         var total = 0;
         var all = 0;
     }    
     
 
     onCalculate() {
-        console.log(km.value);
-        console.log(fuel.value);
-        console.log(price.value);
-        
+        //calculate and put result to the right place
         var total = ((fuel.value / 100) * km.value) * price.value;
         var all = parseFloat(total).toFixed(2);      
-        console.log("Polttoaineen hinta: " + all);
 
-        howMuch.innerHTML = "Polttoaineen kustannukset: " + all + " €";
+        result.value = "Polttoaineen kustannukset: " + all + " €";
     }
     
     onEmpty() {
@@ -39,9 +35,7 @@ export class Home extends React.Component {
                 <input id="km" type="number" placeholder="Ajetut kilometrit"/>
                 <input id="fuel" type="number" placeholder="Keskikulutus / 100 km"/>
                 <input id="price" type="number" placeholder="Polttoaineen litrahinta"/>
-                <div id="total-container">
-                    <h3 id="howMuch"></h3>
-                </div>
+                <input id="result" type="text" placeholder="Polttoainekustannukset:" readOnly/>
                 <br/>
                 <button onClick={this.onCalculate} className="btn btn-success btn-md">Laske kustannukset</button>
                 <button onClick={this.onEmpty} className="btn btn-danger btn-md">Tyhjennä</button>                    
