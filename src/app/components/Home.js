@@ -18,7 +18,7 @@ export class Home extends React.Component {
         var total = ((fuel.value / 100) * km.value) * price.value;
         var all = parseFloat(total).toFixed(2);      
 
-        result.value = "Polttoaineen kustannukset: " + all + " €";
+        result.value = "Polttoainekustannukset: " + all + " €";
     }
     
     onEmpty() {
